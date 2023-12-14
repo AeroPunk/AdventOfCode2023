@@ -1,5 +1,8 @@
 const { testInput, realInput } = require('./input');
 
+let start = new Date();
+console.log(`Start time: ${start.toLocaleTimeString()}`)
+
 const formattedInput = realInput.split(/\r?\n/).filter(x => !!x);
 
 const seeds = formattedInput[0].split(': ')[1].split(/\s+/i).map(x => +x)
@@ -35,6 +38,9 @@ seedPairs.forEach((pair, index) => {
 })
 
 console.log(lowestLocation);
+
+let end = new Date();
+console.log(`Finish time: ${end.toLocaleTimeString()}`)
 
 function getMap(mapName, nextMap = false) {
     return formattedInput
